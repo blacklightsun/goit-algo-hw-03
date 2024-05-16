@@ -10,7 +10,7 @@ def koch_curve(t, order, size):
             t.left(angle)
 
 
-def draw_koch_curve(order, size=500):
+def draw_koch_curve(order, size=300):
     window = turtle.Screen()
     window.bgcolor("white")
 
@@ -20,14 +20,13 @@ def draw_koch_curve(order, size=500):
     t.goto(-size / 2, size / 3)
     t.pendown()
 
-    koch_curve(t, order, size)
-    t.right(120)
-    koch_curve(t, order, size)
-    t.right(120)
-    koch_curve(t, order, size)
+    n = 3  # при бажанні можна погратися з кількістю граней у фігурі
+    for _ in range(n):
+        koch_curve(t, order, size)
+        t.right(360 / n)
 
     window.mainloop()
 
 
 # Виклик функції
-draw_koch_curve(4)
+draw_koch_curve(3)
