@@ -29,4 +29,4 @@ def draw_koch_curve(order, size=300):
 
 
 # Виклик функції
-draw_koch_curve(3)
+draw_koch_curve(int(input('Введіть рівень рекурсії (ціле число від 1 до безкінечності)-> ')))
